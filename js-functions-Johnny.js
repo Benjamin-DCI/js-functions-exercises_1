@@ -16,7 +16,8 @@
 const xo = str => (str.match(/x/gi) || []).length === (str.match(/o/gi) || []).length
 
 
-console.log(xo("rxt"));
+
+console.log(xo("idixd"));
 
 // 2. Pie
 // Create a function that determines whether or not it's possible to split a pie fairly given these three parameters:
@@ -121,45 +122,42 @@ console.log(evenNums(20));
 // Create a function that takes in an initial word and filters out an array to contain words that start with the same letters as the initial word.
 
 // Examples
-
+"tri", ["triplet", "tries", "trip", "piano", "tree"]
 // dictionary("bu", ["button", "breakfast", "border"]) ➞ ["button"]
-// dictionary("tri", ["triplet", "tries", "trip", "piano", "tree"]) ➞ ["triplet", "tries", trip"]
+// dictionary() ➞ ["triplet", "tries", trip"]
 // dictionary("beau", ["pastry", "delicious", "name", "boring"]) ➞ []
 // Notes
 
 // If none of the words match, return an empty array.
 // Keep the filtered array in the same relative order as the original array of words.
 
-const dictionary = (str, names) => {
-    let arr = []
-    for (let i = 0; i < names.length; i++) {
-        if (names[i].includes(str)) {
-            arr.push(names[i])
-        }
-    }
-    return arr;
-}
-console.log(dictionary("bu", ["button", "breakfast", "border"]));
+// const dictionary = (str, names) => {
+//     let arr = []
+//     for (let i = 0; i < names.length; i++) {
+//         if (names[i].includes(str)) {
+//             arr.push(names[i])
+//         }
+//     }
+//     return arr;
+// }
+const dictionary = (str, names) => names.filter(x => x.includes(str));
+
+console.log(dictionary("bu", ["button", "breakfbuast", "border"]));
 
 
 // 8. is a four letter word.
 // Create a function that takes an array of strings. Return all words in the array that are exactly four letters.
 
-// Examples:
+// Examples:es of 4es of 4
+// Create a function that takes an integer and returns an array from 1 to the given number, where:
+
+// Create a function that takes an integer and returns an array from 1 to the given number, where:
+
 
 // isFourLetters(["John", "James", "Jack", "Jeanne"]) ➞ ["John", "Jack"]
 // isFourLetters(["Tomato", "Corn", "Lettuce"]) ➞ ["Corn"]
 // isFourLetters(["Dog", "Cat", "Deer"]) ➞ ["Deer"]
-const isFourLetters = arr => {
-    let isFour = [];
-    for (let i = 0; i < arr.length; i++) {
-
-        if (arr[i].length === 4) {
-            isFour.push(arr[i])
-        }
-    }
-    return isFour;
-}
+const isFourLetters = arr => arr.filter(x => x.length === 4);
 
 console.log(isFourLetters(["John", "James", "Jack", "Jeanne"]));
 
@@ -177,3 +175,4 @@ console.log(isFourLetters(["John", "James", "Jack", "Jeanne"]));
 const isSymmetrical = num => num.toString().split("").reverse().join("") == num;
 
 console.log(isSymmetrical(1112111));
+
